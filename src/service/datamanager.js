@@ -8,7 +8,7 @@ import React from 'react';
 import axios from 'axios';
 
 const whatId = 12;
-const mockedData = false;
+const mockedData = true;
 
 function userInformation() {
     if (mockedData) {
@@ -48,7 +48,27 @@ function userActivity() {
     }
 }
 
+function userAverageSession () {
+    if (mockedData) {
+        let thisUser = {};
+        USER_AVERAGE_SESSIONS.forEach(user => {
+            if (user.userId === whatId) {
+                thisUser = user
+            }
+        });
+        return thisUser.sessions;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId + '/average-sessions'
+        }).then((res) => res.data.data.sessions).catch((err) => {
+            console.log(err);
+        })
+    }
+}
+
 export {
     userInformation,
-    userActivity
+    userActivity,
+    userAverageSession
 }

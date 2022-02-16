@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BarCharts } from '../component/BarCharts';
 import { userInformation, userActivity, userAverageSession, userObjectif } from '../service/datamanager';
 
 const Dashboard = () => {
@@ -9,8 +10,6 @@ const Dashboard = () => {
     const [activity, setActivity] = useState([])
     const [averageSession, setAverageSession] = useState([])
     const [objectif, setObjectif] = useState(null)
-    
-    console.log(userObjectif());
 
     const valid = async () => {
         const dataUser = await userInformation()
@@ -51,12 +50,12 @@ const Dashboard = () => {
         <main className="main">
             <header></header>
             <section >
-                <h1>{!loading ? 'Loading...' : name}</h1>
+                {/* <h1>{!loading ? 'Loading...' : name}</h1>
                 <h2>{!loading ? 'Loading...' : old}</h2>
                 <h2>{!loading ? 'Loading...' : lastName}</h2>
                 <h2>{!loading ? 'Loading...' : (objectif * 100)+"%"}</h2>
                 {makeActivityDay}
-                {makeAverageSession}
+                {makeAverageSession} */}
             </section>
         </main>
     );

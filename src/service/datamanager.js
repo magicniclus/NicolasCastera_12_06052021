@@ -7,7 +7,7 @@ import {
 import React from 'react';
 import axios from 'axios';
 
-const whatId = 12;
+const whatId = 18;
 const mockedData = true;
 
 function userInformation() {

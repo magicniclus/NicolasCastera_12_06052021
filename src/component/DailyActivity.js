@@ -48,7 +48,7 @@ const DailyActivity = () => {
                         </div>
                         <div className='legende_calorie'>
                             <span></span>
-                            <p>Calories brûlées (kcal)</p>
+                            <p>Calories brûlées (kCal)</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,14 @@ const DailyActivity = () => {
                     }}
                     >
                     <CartesianGrid strokeDasharray="4" vertical={false} y={2}/>
-                    <XAxis dataKey="day" />
-                    <YAxis orientation="right" tickCount={3}/>
+                    <XAxis dataKey="day" 
+                    tickFormatter={str => {
+                        let newStr = str.split('-')
+                        newStr = newStr[2].split('')
+                        return newStr[1]
+                    }}
+                    />
+                    <YAxis orientation="right" tickCount={3} type="number" />
                     <Tooltip separator="" contentStyle={{backgroundColor: "#E60000", color:"back"}} itemStyle={{color:"white"}} content={customTooltip} />
                     <Bar dataKey="kilogram" fill="#282D30" barSize={20} radius={[8, 8, 0, 0]}/>
                     <Bar dataKey="calories" fill="#E60000" barSize={20} radius={[8, 8, 0, 0]}/>

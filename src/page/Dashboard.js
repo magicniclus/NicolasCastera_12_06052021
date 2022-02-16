@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarCharts } from '../component/BarCharts';
+import DailyActivity from '../component/DailyActivity';
 import { userInformation, userActivity, userAverageSession, userObjectif } from '../service/datamanager';
 
 const Dashboard = () => {
@@ -56,6 +56,7 @@ const Dashboard = () => {
                 <h2>{!loading ? 'Loading...' : (objectif * 100)+"%"}</h2>
                 {makeActivityDay}
                 {makeAverageSession} */}
+                <DailyActivity />
             </section>
         </main>
     );

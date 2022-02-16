@@ -2,8 +2,6 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const AverageDuration = () => {
-    
-    
     return (
         <div>
             <ResponsiveContainer width="100%" aspect={3}>

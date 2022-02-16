@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { userInformation, userActivity, userAverageSession } from '../service/datamanager';
+import { userInformation, userActivity, userAverageSession, userObjectif } from '../service/datamanager';
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(false)
@@ -8,19 +8,22 @@ const Dashboard = () => {
     const [old, setOld] = useState(null)
     const [activity, setActivity] = useState([])
     const [averageSession, setAverageSession] = useState([])
+    const [objectif, setObjectif] = useState(null)
     
-    userAverageSession()
+    console.log(userObjectif());
 
     const valid = async () => {
         const dataUser = await userInformation()
         const dataAtivity = await userActivity();
         const dataAverageSession = await userAverageSession()
+        const dataObjectif = await userObjectif();
 
         setName(dataUser.firstName)
         setLastName(dataUser.lastName)
         setOld(dataUser.age)
         setActivity(dataAtivity)
         setAverageSession(dataAverageSession)
+        setObjectif(dataObjectif)
         setLoading(true);
     }
 
@@ -39,7 +42,7 @@ const Dashboard = () => {
     const makeAverageSession = (averageSession.map((act)=>
         <div key={act.day}>
             <h2>{!loading ? 'Loading...' : act.day}</h2>
-            <h2>{!loading ? 'Loading...' : act.sessionLength}</h2>
+            <h2>{!loading ? 'Loading...' : (act.sessionLength)}</h2>
         </div>
         
     ))
@@ -51,6 +54,7 @@ const Dashboard = () => {
                 <h1>{!loading ? 'Loading...' : name}</h1>
                 <h2>{!loading ? 'Loading...' : old}</h2>
                 <h2>{!loading ? 'Loading...' : lastName}</h2>
+                <h2>{!loading ? 'Loading...' : (objectif * 100)+"%"}</h2>
                 {makeActivityDay}
                 {makeAverageSession}
             </section>

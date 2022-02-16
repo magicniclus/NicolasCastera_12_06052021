@@ -29,6 +29,25 @@ function userInformation() {
     }
 }
 
+function userObjectif() {
+    if (mockedData) {
+        let thisUser = {};
+        USER_MAIN_DATA.forEach(user => {
+            if (user.userId === whatId) {
+                thisUser = user;
+            }
+        })
+        return thisUser.todayScore;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId
+        }).then((res) => res.data.data.todayScore).catch((err) => {
+            console.log(err);
+        })
+    }
+}
+
 function userActivity() {
     if (mockedData) {
         let thisUser = {};
@@ -70,5 +89,6 @@ function userAverageSession () {
 export {
     userInformation,
     userActivity,
-    userAverageSession
+    userAverageSession,
+    userObjectif
 }

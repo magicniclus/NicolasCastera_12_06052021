@@ -4,7 +4,6 @@ import {
     USER_AVERAGE_SESSIONS,
     USER_PERFORMANCE
 } from "../data";
-import React from 'react';
 import axios from 'axios';
 
 const whatId = 12;

@@ -1,0 +1,86 @@
+.sessionDuration{
+    background-color: #FF0000;
+    width: 835px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .topGraphique{
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 15px;
+        .legende{
+            display: flex;
+            width: 20em;
+            justify-content: space-between;
+            .legende_poids{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 14px;
+                color: #74798C;
+
+                span{
+                    background-color: black;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50px;
+                    margin-right: 0.5rem;
+                }
+
+                p{
+                    
+                }
+            }
+            .legende_calorie{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 14px;
+                color: #74798C;
+
+                span{
+                    background-color: #E60000;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50px;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+    .recharts-responsive-container{
+        .recharts-wrapper{
+            .recharts-surface{
+                .day{
+                    padding: 20px;
+                }
+            }
+            .recharts-tooltip-wrapper{
+                .tooltip{
+                    width: 39px;
+                    height: 25px;
+                    background-color: white;
+                    display: flex;
+                    flex-direction: column;
+                    color: black;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 7px;
+                }
+            }
+        }
+    }
+
+}

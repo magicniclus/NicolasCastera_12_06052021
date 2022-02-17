@@ -1,11 +1,11 @@
 .sessionDuration{
     background-color: #FF0000;
-    width: 835px;
+    width: 258px;
     height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
 
     .topGraphique{
         width: 95%;
@@ -60,6 +60,7 @@
         }
     }
     .recharts-responsive-container{
+        height: 60%;
         .recharts-wrapper{
             .recharts-surface{
                 .day{

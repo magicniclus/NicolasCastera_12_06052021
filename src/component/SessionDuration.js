@@ -8,12 +8,12 @@ import {
   } from "recharts";
 import {userAverageSession} from '../service/datamanager';
 
+let allDay = [];
+
 const SessionDuration = () => {
-
-    const numberOfDay = ['L ', 'M ', 'M ', 'J ', 'V ', 'S ', 'D ']
-
     const [loading, setLoading] = useState(false)
     const [averageSession, setAverageSession] = useState([])
+
 
     const valid = async () => {
         const dataAverageSession = await userAverageSession()
@@ -52,10 +52,8 @@ const SessionDuration = () => {
                     height={300}
                     data={[...averageSession]}
                     margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 10
+                        top: 10,
+                        bottom: 30
                     }}
                     >
                         <Tooltip 
@@ -67,16 +65,38 @@ const SessionDuration = () => {
                           height: 100
                         }}
                         />
+                        <defs>
+                            <linearGradient id="colorUv" x1="1" y1="0" x2="0" y2="0">
+                            <stop offset="5%" stopColor="white" stopOpacity={1}/>
+                            <stop offset="95%" stopColor="white" stopOpacity={0.5}/>
+                            </linearGradient>
+                        </defs>
 
                         <Line
                             type="monotone"
                             dataKey="sessionLength"
-                            stroke="white"
-                            strokeWidth={1}
+                            // stroke="white"
+                            strokeWidth={3}
                             activeDot={{ r: 8 }}
                             dot={{ r: 0 }}
+                            stroke="url(#colorUv)"
                         />
-                        <XAxis name={numberOfDay}/>
+                        <XAxis axisLine={false} 
+                        tickLine={false} 
+                        stroke="#FFFFFF" 
+                        tickFormatter={ str => {
+                            switch(str){
+                                case 0 : return "L";
+                                case 1 : return"M";
+                                case 2 : return"M";
+                                case 3 : return"J";
+                                case 4 : return"V";
+                                case 5 : return"S";
+                                case 6 : return"D";
+                                default: return undefined;
+                            }
+                        }
+                        }/>
                     </LineChart>
                 </ResponsiveContainer>
             </div>

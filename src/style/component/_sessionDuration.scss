@@ -1,5 +1,6 @@
 .sessionDuration{
     background-color: #FF0000;
+    border-radius: 5px;
     width: 258px;
     height: 320px;
     display: flex;
@@ -8,56 +9,17 @@
     justify-content: end;
 
     .topGraphique{
-        width: 95%;
+        margin-right: 3rem;
+        max-width: 147px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-weight: 500;
         font-style: normal;
         font-size: 15px;
-        .legende{
-            display: flex;
-            width: 20em;
-            justify-content: space-between;
-            .legende_poids{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-weight: 500;
-                font-style: normal;
-                font-size: 14px;
-                color: #74798C;
-
-                span{
-                    background-color: black;
-                    height: 8px;
-                    width: 8px;
-                    border-radius: 50px;
-                    margin-right: 0.5rem;
-                }
-
-                p{
-                    
-                }
-            }
-            .legende_calorie{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-weight: 500;
-                font-style: normal;
-                font-size: 14px;
-                color: #74798C;
-
-                span{
-                    background-color: #E60000;
-                    height: 8px;
-                    width: 8px;
-                    border-radius: 50px;
-                    margin-right: 0.5rem;
-                }
-            }
-        }
+        line-height: 24px;
+        color: #FFFFFF;
+        
     }
     .recharts-responsive-container{
         height: 60%;

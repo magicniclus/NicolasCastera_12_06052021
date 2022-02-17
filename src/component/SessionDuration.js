@@ -46,6 +46,9 @@ const SessionDuration = () => {
     } else {
         return (
             <div className="sessionDuration">
+                <div className="topGraphique">
+                    <span>Durée moyenne des sessions</span>
+                </div>
                 <ResponsiveContainer width="100%" height="80%">
                     <LineChart
                     width={500}
@@ -53,18 +56,24 @@ const SessionDuration = () => {
                     data={[...averageSession]}
                     margin={{
                         top: 10,
-                        bottom: 30
+                        bottom: 30,
+                        left: 10,
+                        right: 10
                     }}
                     >
                         <Tooltip 
                         content={customTooltip}
                         className="tooltipLineChart"
-                        cursor={{
-                          stroke: "rgba(0, 0, 0, 0.1)",
-                        //   strokeWidth: "300%",
-                          height: 100
-                        }}
+                        cursor={false}
+                        // {{
+                        //     // stroke: "rgba(0, 0, 0, 0.1)",
+                        //     // height: 100,
+                        //     // strokeWidth: 200,
+                        //     // strokeLinecap:"square",
+                            
+                        // }}
                         />
+
                         <defs>
                             <linearGradient id="colorUv" x1="1" y1="0" x2="0" y2="0">
                             <stop offset="5%" stopColor="white" stopOpacity={1}/>
@@ -75,15 +84,16 @@ const SessionDuration = () => {
                         <Line
                             type="monotone"
                             dataKey="sessionLength"
-                            // stroke="white"
                             strokeWidth={3}
                             activeDot={{ r: 8 }}
                             dot={{ r: 0 }}
                             stroke="url(#colorUv)"
                         />
+
                         <XAxis axisLine={false} 
                         tickLine={false} 
                         stroke="#FFFFFF" 
+                        dy={20}
                         tickFormatter={ str => {
                             switch(str){
                                 case 0 : return "L";
@@ -97,6 +107,7 @@ const SessionDuration = () => {
                             }
                         }
                         }/>
+
                     </LineChart>
                 </ResponsiveContainer>
             </div>

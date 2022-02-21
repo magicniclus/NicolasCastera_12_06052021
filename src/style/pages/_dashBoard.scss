@@ -1,2 +1,8 @@
 @import "../component/dailyActivity";
-@import "../component/sessionDuration"
+@import "../component/sessionDuration";
+@import "../component/radarAnalyse";
+@import "../component/radialBarChart";
+
+.smallAnalyse {
+    display: flex;
+}

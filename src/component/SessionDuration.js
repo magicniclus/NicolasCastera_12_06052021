@@ -4,11 +4,10 @@ import {
     Line,
     Tooltip,
     ResponsiveContainer,
-    XAxis
+    XAxis,
+    YAxis
   } from "recharts";
 import {userAverageSession} from '../service/datamanager';
-
-let allDay = [];
 
 const SessionDuration = () => {
     const [loading, setLoading] = useState(false)
@@ -61,17 +60,11 @@ const SessionDuration = () => {
                         right: 10
                     }}
                     >
+
                         <Tooltip 
                         content={customTooltip}
                         className="tooltipLineChart"
                         cursor={false}
-                        // {{
-                        //     // stroke: "rgba(0, 0, 0, 0.1)",
-                        //     // height: 100,
-                        //     // strokeWidth: 200,
-                        //     // strokeLinecap:"square",
-                            
-                        // }}
                         />
 
                         <defs>
@@ -94,6 +87,7 @@ const SessionDuration = () => {
                         tickLine={false} 
                         stroke="#FFFFFF" 
                         dy={20}
+                        fontSize={12}
                         tickFormatter={ str => {
                             switch(str){
                                 case 0 : return "L";
@@ -105,8 +99,8 @@ const SessionDuration = () => {
                                 case 6 : return"D";
                                 default: return undefined;
                             }
-                        }
-                        }/>
+                        }}
+                        />
 
                     </LineChart>
                 </ResponsiveContainer>

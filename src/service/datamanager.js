@@ -6,8 +6,8 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 12;
-const mockedData = true;
+const whatId = 18;
+const mockedData = false;
 
 function userInformation() {
     if (mockedData) {
@@ -85,9 +85,49 @@ function userAverageSession () {
     }
 }
 
+function radarGlobalData (){
+    if (mockedData) {
+        let thisUser = {};
+        USER_PERFORMANCE.forEach(user => {
+            if (user.userId === whatId) {
+                return user.data;
+            }
+        });
+        return thisUser.sessions;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId + '/performance'
+        }).then((res) => res.data.data.data).catch((err) => {
+            console.log(err);
+        })
+    }
+}
+
+function radarGlobalKind (){
+    if (mockedData) {
+        let thisUser = {};
+        USER_PERFORMANCE.forEach(user => {
+            if (user.userId === whatId) {
+                return user.kind;
+            }
+        });
+        return thisUser.sessions;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId + '/performance'
+        }).then((res) => res.data.data.kind).catch((err) => {
+            console.log(err);
+        })
+    }
+}
+
 export {
     userInformation,
     userActivity,
     userAverageSession,
-    userObjectif
+    userObjectif, 
+    radarGlobalData,
+    radarGlobalKind
 }

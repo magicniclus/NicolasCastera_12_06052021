@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import RadialBarChart from '../component/RadialBarChart';
 import DailyActivity from '../component/DailyActivity';
+import RadarAnalyse from '../component/RadarAnalyse';
 import SessionDuration from '../component/SessionDuration';
 import { userInformation, userActivity, userAverageSession, userObjectif } from '../service/datamanager';
 
@@ -51,14 +53,12 @@ const Dashboard = () => {
         <main className="main">
             <header></header>
             <section >
-                {/* <h1>{!loading ? 'Loading...' : name}</h1>
-                <h2>{!loading ? 'Loading...' : old}</h2>
-                <h2>{!loading ? 'Loading...' : lastName}</h2>
-                <h2>{!loading ? 'Loading...' : (objectif * 100)+"%"}</h2>
-    {makeActivityDay}*/}
-                {/* {makeAverageSession}  */}
-                <SessionDuration />
                 <DailyActivity />
+                <div className='smallAnalyse'>
+                    <SessionDuration />
+                    <RadarAnalyse />
+                    <RadialBarChart />
+                </div>
             </section>
         </main>
     );

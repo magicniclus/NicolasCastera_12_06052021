@@ -64,51 +64,53 @@ const DailyActivity = () => {
                     }}
                     >
 
-                    <CartesianGrid 
-                    strokeDasharray="4" 
-                    vertical={false} 
-                    y={2}
-                    />
+                        <CartesianGrid 
+                        strokeDasharray="4" 
+                        vertical={false} 
+                        y={2}
+                        />
 
-                    <XAxis 
-                    dataKey="day" 
-                    tickLine={false} 
-                    dy={10}
-                    tickFormatter={str => {
-                        let newStr = str.split('-')
-                        newStr = newStr[2].split('')
-                        return newStr[1]
-                    }}
-                    />
+                        <XAxis 
+                        dataKey="day" 
+                        tickLine={false} 
+                        dy={10}
+                        fontSize={15}
+                        tickFormatter={str => {
+                            let newStr = str.split('-')
+                            newStr = newStr[2].split('')
+                            return newStr[1]
+                        }}
+                        />
 
-                    <YAxis 
-                    orientation="right" 
-                    tickCount={3} 
-                    type="number" 
-                    tickLine={false} 
-                    axisLine={false}
-                    />
+                        <YAxis 
+                        orientation="right" 
+                        tickCount={3} 
+                        type="number" 
+                        tickLine={false} 
+                        axisLine={false}
+                        fontSize={15}
+                        />
 
-                    <Tooltip 
-                    separator="" 
-                    contentStyle={{backgroundColor: "#E60000", color:"back"}} 
-                    itemStyle={{color:"white"}} 
-                    content={customTooltip} 
-                    />
+                        <Tooltip 
+                        separator="" 
+                        contentStyle={{backgroundColor: "#E60000", color:"back"}} 
+                        itemStyle={{color:"white"}} 
+                        content={customTooltip} 
+                        />
 
-                    <Bar 
-                    dataKey="kilogram" 
-                    fill="#282D30" 
-                    barSize={20} 
-                    radius={[8, 8, 0, 0]}
-                    />
+                        <Bar 
+                        dataKey="kilogram" 
+                        fill="#282D30" 
+                        barSize={20} 
+                        radius={[8, 8, 0, 0]}
+                        />
 
-                    <Bar 
-                    dataKey="calories" 
-                    fill="#E60000" 
-                    barSize={20} 
-                    radius={[8, 8, 0, 0]}
-                    />
+                        <Bar 
+                        dataKey="calories" 
+                        fill="#E60000" 
+                        barSize={20} 
+                        radius={[8, 8, 0, 0]}
+                        />
 
                     </BarChart>
                 </ResponsiveContainer>

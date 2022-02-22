@@ -30,13 +30,13 @@ function userInformation() {
 
 function userObjectif() {
     if (mockedData) {
-        let thisUser = {};
+        let thisUser;
         USER_MAIN_DATA.forEach(user => {
             if (user.userId === whatId) {
                 thisUser = user;
             }
+            return thisUser
         })
-        return thisUser.todayScore;
     } else {
         return axios({
             method: 'get',
@@ -90,18 +90,30 @@ function radarGlobalData (){
         let thisUser = {};
         USER_PERFORMANCE.forEach(user => {
             if (user.userId === whatId) {
-                return user.data;
+                thisUser = user.data;
             }
+            console.log(thisUser);
         });
-        return thisUser.sessions;
+        return thisUser
     } else {
         return axios({
             method: 'get',
             url: 'http://localhost:3000/user/' + whatId + '/performance'
-        }).then((res) => res.data.data.data).catch((err) => {
+        }).then((res) => {
+            console.log(res.data.data.data);
+            return res.data.data.data
+        }).catch((err) => {
             console.log(err);
         })
     }
+}
+
+function returnThis () {
+    let thisUser;
+    USER_PERFORMANCE.forEach(user => {
+        thisUser = user.data;
+    });
+    // console.log(thisUser);
 }
 
 function radarGlobalKind (){
@@ -109,10 +121,11 @@ function radarGlobalKind (){
         let thisUser = {};
         USER_PERFORMANCE.forEach(user => {
             if (user.userId === whatId) {
-                return user.kind;
+                thisUser = user.kind;
             }
         });
-        return thisUser.sessions;
+        // console.log(thisUser);
+        return thisUser;
     } else {
         return axios({
             method: 'get',
@@ -129,5 +142,6 @@ export {
     userAverageSession,
     userObjectif, 
     radarGlobalData,
-    radarGlobalKind
+    radarGlobalKind,
+    returnThis
 }

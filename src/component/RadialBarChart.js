@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { RadialBarChart as GlobalRadial, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart as GlobalRadial, RadialBar, ResponsiveContainer } from 'recharts';
+import { userObjectif } from '../service/datamanager';
 
 const data = [
     {
@@ -18,30 +19,50 @@ const style = {
   };
 
 const RadialBarChart = () => {
-    return (
-        <div className="radialBarChart">
-            <ResponsiveContainer width="100%" height="100%">
+    const [loading, setLoading] = useState(false)
+    const [objectif, setObjectif] = useState(null)
 
-                <GlobalRadial
-                 cx="50%"
-                 cy="50%"
-                 innerRadius="90%"
-                 outerRadius="80%"
-                 startAngle={90}
-                 endAngle={360}
-                 barSize={10}
-                 data={data}
-                >
+    const valid = async () => {
+        const dataObjectif = await userObjectif();
+        setObjectif(dataObjectif)
+        setLoading(true);
+    }
 
-                    <RadialBar
-                        dataKey="uv"
-                        radius={[8,8,8,8]}
-                    />
+    useEffect(() => {
+        valid()
+    }, [])
 
-                </GlobalRadial>
-            </ResponsiveContainer>
-        </div>
-    );
+    if(!loading){
+        return(
+            <div className="loading">
+                <h1>Loading...</h1>
+            </div>
+        )
+    } else {
+        return (
+            <div className="radialBarChart">
+                <ResponsiveContainer width="100%" height="100%">
+    
+                    <GlobalRadial
+                     cx="50%"
+                     cy="50%"
+                     innerRadius="90%"
+                     outerRadius="80%"
+                     startAngle={90}
+                     endAngle={450}
+                     barSize={10}
+                     data={data}
+                    >
+    
+                        <RadialBar
+                            dataKey="uv"
+                        />
+    
+                    </GlobalRadial>
+                </ResponsiveContainer>
+            </div>
+        );
+    }
 };
 
 export default RadialBarChart;

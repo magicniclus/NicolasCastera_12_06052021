@@ -36,7 +36,7 @@ const DailyActivity = () => {
                 <h1>Loading...</h1>
             </div>
         )
-    }else {
+    } else {
         return (
             <div className="dailyActivity">
                 <div className="topGraphique">

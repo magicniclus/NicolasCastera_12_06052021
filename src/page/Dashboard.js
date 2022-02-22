@@ -3,7 +3,7 @@ import RadialBarChart from '../component/RadialBarChart';
 import DailyActivity from '../component/DailyActivity';
 import RadarAnalyse from '../component/RadarAnalyse';
 import SessionDuration from '../component/SessionDuration';
-import { userInformation, userActivity, userAverageSession, userObjectif } from '../service/datamanager';
+import { userInformation, userActivity, userAverageSession} from '../service/datamanager';
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(false)
@@ -12,20 +12,17 @@ const Dashboard = () => {
     const [old, setOld] = useState(null)
     const [activity, setActivity] = useState([])
     const [averageSession, setAverageSession] = useState([])
-    const [objectif, setObjectif] = useState(null)
 
     const valid = async () => {
         const dataUser = await userInformation()
         const dataAtivity = await userActivity();
         const dataAverageSession = await userAverageSession()
-        const dataObjectif = await userObjectif();
 
         setName(dataUser.firstName)
         setLastName(dataUser.lastName)
         setOld(dataUser.age)
         setActivity(dataAtivity)
         setAverageSession(dataAverageSession)
-        setObjectif(dataObjectif)
         setLoading(true);
     }
 

@@ -6,27 +6,8 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 18;
+const whatId = 12;
 const mockedData = false;
-
-function userInformation() {
-    if (mockedData) {
-        let thisUser = {};
-        USER_MAIN_DATA.forEach(user => {
-            if (user.userId === whatId) {
-                thisUser = user;
-            }
-        })
-        return thisUser.userInfos;
-    } else {
-        return axios({
-            method: 'get',
-            url: 'http://localhost:3000/user/' + whatId
-        }).then((res) => res.data.data.userInfos).catch((err) => {
-            console.log(err);
-        })
-    }
-}
 
 function userObjectif() {
     if (mockedData) {
@@ -41,7 +22,10 @@ function userObjectif() {
         return axios({
             method: 'get',
             url: 'http://localhost:3000/user/' + whatId
-        }).then((res) => res.data.data.todayScore).catch((err) => {
+        }).then((res) => {
+            console.log(res.data.data.todayScore);
+            return res.data.data.todayScore
+        }).catch((err) => {
             console.log(err);
         })
     }
@@ -92,7 +76,6 @@ function radarGlobalData (){
             if (user.userId === whatId) {
                 thisUser = user.data;
             }
-            console.log(thisUser);
         });
         return thisUser
     } else {
@@ -100,7 +83,6 @@ function radarGlobalData (){
             method: 'get',
             url: 'http://localhost:3000/user/' + whatId + '/performance'
         }).then((res) => {
-            console.log(res.data.data.data);
             return res.data.data.data
         }).catch((err) => {
             console.log(err);
@@ -108,13 +90,6 @@ function radarGlobalData (){
     }
 }
 
-function returnThis () {
-    let thisUser;
-    USER_PERFORMANCE.forEach(user => {
-        thisUser = user.data;
-    });
-    // console.log(thisUser);
-}
 
 function radarGlobalKind (){
     if (mockedData) {
@@ -137,11 +112,9 @@ function radarGlobalKind (){
 }
 
 export {
-    userInformation,
     userActivity,
     userAverageSession,
     userObjectif, 
     radarGlobalData,
-    radarGlobalKind,
-    returnThis
+    radarGlobalKind
 }

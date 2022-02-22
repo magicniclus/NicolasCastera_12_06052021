@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { RadialBarChart as GlobalRadial, RadialBar, ResponsiveContainer } from 'recharts';
 import { userObjectif } from '../service/datamanager';
 
+userObjectif();
+
 const data = [
     {
       name: '50+',
@@ -10,13 +12,6 @@ const data = [
       fill: '#FF0101',
     }
 ];    
-
-const style = {
-    top: '50%',
-    right: '35%',
-    transform: 'translate(0, -50%)',
-    lineHeight: '24px',
-  };
 
 const RadialBarChart = () => {
     const [loading, setLoading] = useState(false)

@@ -6,11 +6,9 @@ import {
     PolarAngleAxis, 
     ResponsiveContainer 
 } from 'recharts';
-import { radarGlobalData, radarGlobalKind, returnThis } from '../service/datamanager';
+import { radarGlobalData, radarGlobalKind } from '../service/datamanager';
 
 const RadarAnalyse = () => {
-    returnThis();
-    // console.log(radarGlobalData());
 
     const [loading, setLoading] = useState(false);
     const [kind, setKind] = useState(null);

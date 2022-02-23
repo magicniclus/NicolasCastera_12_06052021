@@ -6,24 +6,23 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 12;
-const mockedData = false;
+const whatId = 18;
+const mockedData = true;
 
 function userObjectif() {
     if (mockedData) {
-        let thisUser;
+        let thisUser;;
         USER_MAIN_DATA.forEach(user => {
-            if (user.userId === whatId) {
-                thisUser = user;
+            if(user.userId === whatId){
+                thisUser=user.todayScore;
             }
-            return thisUser
         })
+        return thisUser
     } else {
         return axios({
             method: 'get',
             url: 'http://localhost:3000/user/' + whatId
         }).then((res) => {
-            console.log(res.data.data.todayScore);
             return res.data.data.todayScore
         }).catch((err) => {
             console.log(err);

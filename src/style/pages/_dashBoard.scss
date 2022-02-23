@@ -1,11 +1,61 @@
 @import "../component/dailyActivity";
-@import "../component/sessionDuration";
+@import "../component/titla";
 @import "../component/radarAnalyse";
 @import "../component/radialBarChart";
+@import "../component/sessionDuration";
+@import "../component/vignette";
 
-.smallAnalyse {
-    width: 835px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
+
+header {
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img{
+            margin-left: 2rem;
+        }
+
+        ul {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            margin-right: 3rem;
+
+            li{
+                text-decoration: none;
+                list-style: none;
+                font-weight: 500;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .navTop{
+        width: 100%;
+        height: 91px;
+        background: #020203;
+    }
 }
+
+.container{
+    display: flex;
+    height: 120vh;
+
+    .navLeft{
+        width: 91px;
+        height: 100%;
+        background: #020203;
+        margin-right: 5rem;
+    }
+
+    .smallAnalyse {
+        width: 835px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+}
+

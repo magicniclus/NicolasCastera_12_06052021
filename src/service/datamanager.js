@@ -6,12 +6,33 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 18;
+const whatId = 12;
 const mockedData = true;
+
+function globalData(){
+    if(mockedData){
+        let thisUser;
+        USER_MAIN_DATA.forEach(user =>{
+            if(whatId === user.userId){
+                thisUser = user.userInfos.firstName;
+            }
+        })
+        return thisUser;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId
+        }).then((res) => {
+            return res.data.data.userInfos.firstName;
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+}
 
 function userObjectif() {
     if (mockedData) {
-        let thisUser;;
+        let thisUser;
         USER_MAIN_DATA.forEach(user => {
             if(user.userId === whatId){
                 thisUser=user.todayScore;
@@ -111,6 +132,7 @@ function radarGlobalKind (){
 }
 
 export {
+    globalData,
     userActivity,
     userAverageSession,
     userObjectif, 

@@ -2,4 +2,17 @@
     height: 320px;
     width: 258px;
     background-color: #FBFBFB;
+    position: relative;
+    border-radius: 5px;
+
+    h2{
+        font-weight: 500;
+        font-style: normal;
+        font-size: 15px;
+        margin: 0;
+        color: #20253A;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
 }

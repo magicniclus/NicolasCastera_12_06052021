@@ -1,0 +1,17 @@
+.vignetteContainer{
+    width: 100%;
+    margin-top: 30vh;
+    .vignette{
+        cursor: pointer;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #FFFFFF;
+        width: 64px;
+        height: 64px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

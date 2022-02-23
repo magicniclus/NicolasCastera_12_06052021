@@ -27,8 +27,8 @@ const Dashboard = () => {
                         <Vignette logo="Swim.png" />
                         <Vignette logo="Bike.png" />
                         <Vignette logo="Bench.png" />
-
                     </div>
+                    <div className="copiryght"><span>Copiryght, SportSee 2020</span></div>
                 </nav>
                 <section className='sectionLeft'>
                     <Title />

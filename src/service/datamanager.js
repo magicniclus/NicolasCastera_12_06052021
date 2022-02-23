@@ -6,8 +6,8 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 12;
-const mockedData = true;
+const whatId = 18;
+const mockedData = false;
 
 function globalData(){
     if(mockedData){

@@ -49,6 +49,20 @@ header {
         height: 100%;
         background: #020203;
         margin-right: 5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        .copiryght{
+            margin: 0;
+            color: white;
+            transform: rotate(-90deg);
+            width: 15rem;
+            margin-top: 12rem;
+            font-style: normal;
+            font-size: 12px;
+        }
     }
 
     .smallAnalyse {

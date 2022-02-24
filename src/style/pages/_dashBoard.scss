@@ -1,4 +1,5 @@
 @import "../component/dailyActivity";
+@import "../component/keyData";
 @import "../component/titla";
 @import "../component/radarAnalyse";
 @import "../component/radialBarChart";
@@ -65,11 +66,26 @@ header {
         }
     }
 
-    .smallAnalyse {
-        width: 835px;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
+    .sectionLeft{
+        .smallAnalyse {
+            width: 835px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
     }
+
+    .sectionRight{
+        margin-top: 15em;
+        height: 42em;
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include keyData;
+    }
+    
 }
 

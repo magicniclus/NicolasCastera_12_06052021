@@ -30,6 +30,27 @@ function globalData(){
     }
 }
 
+function globalKeyData(){
+    if(mockedData){
+        let thisUser;
+        USER_MAIN_DATA.forEach(user =>{
+            if(whatId === user.userId){
+                thisUser = user.keyData;
+            }
+        })
+        return thisUser;
+    } else {
+        return axios({
+            method: 'get',
+            url: 'http://localhost:3000/user/' + whatId
+        }).then((res) => {
+            return res.data.data.keyData;
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+}
+
 function userObjectif() {
     if (mockedData) {
         let thisUser;
@@ -133,6 +154,7 @@ function radarGlobalKind (){
 
 export {
     globalData,
+    globalKeyData,
     userActivity,
     userAverageSession,
     userObjectif, 

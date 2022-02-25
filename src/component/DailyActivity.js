@@ -101,14 +101,14 @@ const DailyActivity = () => {
                         <Bar 
                         dataKey="kilogram" 
                         fill="#282D30" 
-                        barSize={20} 
+                        barSize={7} 
                         radius={[8, 8, 0, 0]}
                         />
 
                         <Bar 
                         dataKey="calories" 
                         fill="#E60000" 
-                        barSize={20} 
+                        barSize={7} 
                         radius={[8, 8, 0, 0]}
                         />
 

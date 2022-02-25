@@ -9,13 +9,21 @@
 
         figure{
             width: 60px;
+            max-width: 20%;
             height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 5px;
-        }
 
+        }
+        
+        @media screen and (max-width: 1120px) {
+            figure{
+                margin: 10%;
+                height: 40px;
+            }
+        }
         .rightContainer{
             h3{
                 margin: 0;
@@ -27,6 +35,16 @@
                 font-weight: 500;
                 font-size: 14px;
                 color: #74798C;
+            }
+
+            @media screen and (max-width: 1400px) {
+                h3{
+                    font-size: 15px;
+                }
+
+                span{
+                    font-size: 11px;
+                }
             }
         }
     }

@@ -79,8 +79,9 @@ const SessionDuration = () => {
                             dataKey="sessionLength"
                             strokeWidth={3}
                             activeDot={{ r: 8 }}
-                            dot={{ r: 0 }}
+                            dot={false}
                             stroke="url(#colorUv)"
+                            activeDot={{  strokeWidth: 5, r: 3 }}
                         />
 
                         <XAxis axisLine={false} 
@@ -100,6 +101,7 @@ const SessionDuration = () => {
                                 default: return undefined;
                             }
                         }}
+                        
                         />
 
                     </LineChart>

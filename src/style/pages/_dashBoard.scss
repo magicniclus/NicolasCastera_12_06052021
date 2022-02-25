@@ -44,72 +44,72 @@ header {
 }
 
 .container{
+    width: 100%;
+    height: calc(100% - 91px);
     display: flex;
-    height: 120vh;
 
     .navLeft{
-        width: 91px;
-        height: calc(100vh - 91px);
-        background: #020203;
-        margin-right: 5rem;
+        height: 100%;
+        width: 117px;
+        background-color: black;
+        position: relative;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .vignetteContainer{
+            margin-bottom: 10rem;
+        }
 
         .copiryght{
-            margin: 0;
             color: white;
             transform: rotate(-90deg);
-            width: 15rem;
-            margin-top: 10rem;
-            font-style: normal;
-            font-size: 12px;
+            position: absolute;
+            width: 12rem;
+            bottom: 10rem;
+        }
+    }
+}
+
+.bodyContainer{
+    width: calc(100% - 117px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .title{
+        width: 100%;
+
+        h1{
+            margin-left: 4rem;
+        }
+    
+        p{
+            margin-left: 4rem;
         }
     }
 
     .sectionLeft{
-        height: calc(100vh - 91px);
-
-        .smallAnalyse {
-            width: 835px;
+        width: 65%;
+        display: flex;
+        flex-wrap: wrap;
+        .smallAnalyse{
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            margin-top: 2rem;
         }
     }
 
     .sectionRight{
-        margin-top: 15em;
-        height: 37em;
-        width: 300px;
-        margin-right: auto;
-        margin-left: auto;
+        width: 20%;
+        margin-bottom: 2%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        @include keyData;
+
+        @include keyData
     }
-    
+
+
 }
-
-
-
-@media screen and (max-width: 1500px){
-    .container{
-        .navLeft{
-            height: 60em;
-        }
-
-    }
-}
-
-@media screen and (max-width: 1024px){
-    .container{
-        .navLeft{
-            height: calc(100vh - 91px);
-        }
-
-    }
-}
-

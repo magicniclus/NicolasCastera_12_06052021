@@ -61,21 +61,24 @@ const Dashboard = () => {
                         </div>
                         <div className="copiryght"><span>Copiryght, SportSee 2020</span></div>
                     </nav>
-                    <section className='sectionLeft'>
+                    <div className="bodyContainer">
                         <Title />
-                        <DailyActivity />
-                        <div className='smallAnalyse'>
-                                <SessionDuration />
-                                <RadarAnalyse />
-                                <RadialBarChart />
-                        </div>
-                    </section>
-                    <section className='sectionRight'>
-                        <KeyData name='calorie' value={calorie + "KCal"} image='Fire.png' />
-                        <KeyData name='proteines' value={protein + "g"} image='Prot.png'/>
-                        <KeyData name='glucides' value={carbohydrate + "g"} image='Apple.svg'/>
-                        <KeyData name='lipides' value={lipid + "g"} image='Cheeseburger.svg'/>
-                    </section>
+                        <section className='sectionLeft'>
+                            <DailyActivity />
+                            <div className='smallAnalyse'>
+                                    <SessionDuration />
+                                    <RadarAnalyse />
+                                    <RadialBarChart />
+                            </div>
+                        </section>
+                        <section className='sectionRight'>
+                            <KeyData name='calorie' value={calorie + "KCal"} image='Fire.png' />
+                            <KeyData name='proteines' value={protein + "g"} image='Prot.png'/>
+                            <KeyData name='glucides' value={carbohydrate + "g"} image='Apple.svg'/>
+                            <KeyData name='lipides' value={lipid + "g"} image='Cheeseburger.svg'/>
+                        </section>
+                    </div>
+                    
                 </div>
             </main>
         );

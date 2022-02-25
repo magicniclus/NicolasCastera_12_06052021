@@ -6,7 +6,10 @@ import {
 } from "../data";
 import axios from 'axios';
 
-const whatId = 18;
+
+
+const whatId = parseInt(window.location.href.split("/")[4]);
+console.log(whatId, window.location.href)
 const mockedData = false;
 
 function globalData(){

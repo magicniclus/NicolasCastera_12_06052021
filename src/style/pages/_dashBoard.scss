@@ -12,6 +12,8 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        -webkit-box-shadow: 0px 6px 0px -1px rgba(0,0,0,0.12); 
+        box-shadow: 0px 6px 0px -1px rgba(0,0,0,0.12);
         img{
             margin-left: 2rem;
         }
@@ -47,7 +49,7 @@ header {
 
     .navLeft{
         width: 91px;
-        height: 100%;
+        height: calc(100vh - 91px);
         background: #020203;
         margin-right: 5rem;
         display: flex;
@@ -60,13 +62,15 @@ header {
             color: white;
             transform: rotate(-90deg);
             width: 15rem;
-            margin-top: 12rem;
+            margin-top: 10rem;
             font-style: normal;
             font-size: 12px;
         }
     }
 
     .sectionLeft{
+        height: calc(100vh - 91px);
+
         .smallAnalyse {
             width: 835px;
             display: flex;
@@ -77,7 +81,7 @@ header {
 
     .sectionRight{
         margin-top: 15em;
-        height: 42em;
+        height: 37em;
         width: 300px;
         margin-right: auto;
         margin-left: auto;
@@ -87,5 +91,25 @@ header {
         @include keyData;
     }
     
+}
+
+
+
+@media screen and (max-width: 1500px){
+    .container{
+        .navLeft{
+            height: 60em;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        .navLeft{
+            height: calc(100vh - 91px);
+        }
+
+    }
 }
 

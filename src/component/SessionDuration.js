@@ -4,8 +4,7 @@ import {
     Line,
     Tooltip,
     ResponsiveContainer,
-    XAxis,
-    YAxis
+    XAxis
   } from "recharts";
 import {userAverageSession} from '../service/datamanager';
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { userActivity } from '../service/datamanager';
+import PropTypes from 'prop-types';
 
 const DailyActivity = () => {
     const [loading, setLoading] = useState(false)
@@ -16,7 +17,7 @@ const DailyActivity = () => {
         itsLoading()
     }, [])
 
-    function customTooltip ({active, payload, label}){
+    function customTooltip ({active, payload}){
         if(active){
             const calorie = payload[1].value;
             const kilogram = payload[0].value
@@ -28,6 +29,10 @@ const DailyActivity = () => {
             )
         }
         return null;
+    }
+    customTooltip.propType = {
+        active: PropTypes.bool.isRequired,
+        kilogram: PropTypes.number.isRequired
     }
 
     if(!loading){

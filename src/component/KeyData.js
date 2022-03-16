@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const KeyData = (props) => {
     const name = props.name;
@@ -7,8 +9,11 @@ const KeyData = (props) => {
     let altTitle = img.split('.');
     altTitle = altTitle[0]
 
-    console.log(name, value);
-
+    /**
+     * returns the keydata component
+     *
+     * @return  {JSX}
+     */
     return (
         <div className={"KeyData "+ name}>
             <figure className="leftContainer">
@@ -21,5 +26,13 @@ const KeyData = (props) => {
         </div>
     );
 };
+KeyData.propTypes = {
+    props:{
+        name: string.isRequired,
+        value: number.isRequired,
+        img: string.isRequired
+    }
+}
+
 
 export default KeyData;

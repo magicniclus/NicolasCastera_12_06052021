@@ -76,5 +76,8 @@ const RadarAnalyse = () => {
         );
     }
 };
+DailyActivity.prototype = {
+    setActivity: func.isRequired
+}
 
 export default RadarAnalyse;

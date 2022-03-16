@@ -15,8 +15,6 @@ const Dashboard = () => {
     const [carbohydrate, setCarbohydrate] = useState(null);
     const [lipid, setLipid] = useState(null);
 
-    console.log(globalKeyData());
-
     async function isLoading(){
             const makeData = await globalKeyData();
             setCalorie(makeData.calorieCount);
@@ -37,7 +35,6 @@ const Dashboard = () => {
             </div>
         )
     } else {
-        console.log(calorie, protein, carbohydrate, lipid);
         return (
             <main className="main">
                 <header>

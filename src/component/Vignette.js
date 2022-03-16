@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Vignette = (props) => {
     const logo = props.logo
@@ -9,5 +10,11 @@ const Vignette = (props) => {
         </div>
     );
 };
+
+Vignette.protoType = {
+    props:{
+        logo: PropTypes.string.isRequired
+    }
+}
 
 export default Vignette;

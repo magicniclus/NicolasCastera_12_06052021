@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { RadialBarChart as GlobalRadial, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
-import { radarGlobalKind, userObjectif } from '../service/datamanager';
+import { userObjectif } from '../service/datamanager';
 
 const RadialBarChart = () => {
     const [data, setData] = useState(null);

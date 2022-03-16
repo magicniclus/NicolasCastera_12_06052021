@@ -6,12 +6,20 @@ import {
 } from "../data";
 import axios from 'axios';
 
-
-
 const whatId = parseInt(window.location.href.split("/")[4]);
-console.log(whatId, window.location.href)
+
+/**
+ * validate if we recover the data by axios or in the internal data
+ *
+ * @var {boolean}
+ */
 const mockedData = false;
 
+/**
+ * global recovery of user firstName data
+ *
+ * @return  {Object} 
+ */
 function globalData(){
     if(mockedData){
         let thisUser;
@@ -33,6 +41,11 @@ function globalData(){
     }
 }
 
+/**
+ * return the id of the user and add it to the url data
+ *
+ * @return  {Object} 
+ */
 function globalKeyData(){
     if(mockedData){
         let thisUser;
@@ -54,6 +67,12 @@ function globalKeyData(){
     }
 }
 
+
+/**
+ * retourn the users objectif data
+ *
+ * @return  {Object}
+ */
 function userObjectif() {
     if (mockedData) {
         let thisUser;
@@ -75,6 +94,11 @@ function userObjectif() {
     }
 }
 
+/**
+ * return the userActivity data
+ *
+ * @return  {Object}
+ */
 function userActivity() {
     if (mockedData) {
         let thisUser = {};
@@ -94,6 +118,11 @@ function userActivity() {
     }
 }
 
+/**
+ * return the user average session data
+ *
+ * @return  {Object}  
+ */
 function userAverageSession () {
     if (mockedData) {
         let thisUser = {};
@@ -113,6 +142,11 @@ function userAverageSession () {
     }
 }
 
+/**
+ * return user performence data
+ *
+ * @return  {Object}  [return description]
+ */
 function radarGlobalData (){
     if (mockedData) {
         let thisUser = {};
@@ -134,7 +168,11 @@ function radarGlobalData (){
     }
 }
 
-
+/**
+ * return user performence data
+ *
+ * @return  {Object} 
+ */
 function radarGlobalKind (){
     if (mockedData) {
         let thisUser = {};
@@ -143,7 +181,6 @@ function radarGlobalKind (){
                 thisUser = user.kind;
             }
         });
-        // console.log(thisUser);
         return thisUser;
     } else {
         return axios({

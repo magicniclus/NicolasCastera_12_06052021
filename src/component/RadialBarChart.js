@@ -2,10 +2,30 @@ import React, {useState, useEffect} from 'react';
 import { RadialBarChart as GlobalRadial, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import { userObjectif } from '../service/datamanager';
 
+/**
+ * [RadialBarChart component]
+ *
+ */
 const RadialBarChart = () => {
+
+    /**
+     * [data state]
+     *
+     */
     const [data, setData] = useState(null);
+
+    /**
+     * [isLoading state]
+     *
+     * @param   {boolean}  false  
+     *
+     */
     const [isLoading, setIsLoading] = useState(false);
 
+    /**
+     * [retrieval of userObjectif data via the datamanager]
+     *
+     */
     const loading = async () => {
         const makeData = await userObjectif();
         setData(makeData);

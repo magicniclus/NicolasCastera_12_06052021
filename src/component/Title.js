@@ -2,9 +2,24 @@ import React, {useState, useEffect} from 'react';
 import { globalData } from '../service/datamanager';
 
 const Title = () => {
+    /**
+     * [loading state]
+     *
+     * @param   {boolean}  false
+     *
+     */
     const [loading, setLoading] = useState(false);
+
+    /**
+     * [data State]
+     *
+     */
     const [data, setData] = useState (null);
 
+    /**
+     * [itsLoading function]
+     * [retrieval of globalData data via the datamanager]
+     */
     const itsLoading = async () => {
         const makeData = await globalData();
         setData(makeData);

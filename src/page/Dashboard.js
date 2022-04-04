@@ -9,12 +9,42 @@ import Vignette from '../component/Vignette';
 import KeyData from '../component/KeyData';
 
 const Dashboard = () => {
+    /**
+     * [loading state]
+     *
+     * @param   {Boolean}  false  
+     *
+     */
     const [loading, setLoading] = useState(false);
+
+    /**
+     * [calorie state]
+     *
+     */
     const [calorie, setCalorie] = useState(null);
+
+    /**
+     * [protein state]
+     *
+     */
     const [protein, setProtein] = useState(null);
+
+    /**
+     * [carbohydrate state]
+     *
+     */
     const [carbohydrate, setCarbohydrate] = useState(null);
+
+    /**
+     * [lipid state]
+     *
+     */
     const [lipid, setLipid] = useState(null);
 
+    /**
+     * [Function of managment of the loader]
+     *
+     */
     async function isLoading(){
             const makeData = await globalKeyData();
             setCalorie(makeData.calorieCount);

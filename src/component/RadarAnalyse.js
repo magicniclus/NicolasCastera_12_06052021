@@ -8,12 +8,35 @@ import {
 } from 'recharts';
 import { radarGlobalData, radarGlobalKind } from '../service/datamanager';
 
+/**
+ * [RadarAnalyse component]
+ *
+ */
 const RadarAnalyse = () => {
 
+    /**
+     * [loading state]
+     *
+     * @param   {Boolean}  false 
+     */
     const [loading, setLoading] = useState(false);
-    const [kind, setKind] = useState(null);
-    const [data, setData] = useState (null)
 
+    /**
+     * [kind state]
+     *
+     */
+    const [kind, setKind] = useState(null);
+
+    /**
+     * [data state]
+     *
+     */
+    const [data, setData] = useState (null);
+
+    /**
+     * [retrieval of rzdarGlobalData and radarGlobalKind data via the datamanager]
+     *
+     */
     const itsLoading = async () => {
         const makeData = await radarGlobalData();
         setData(makeData)
@@ -76,8 +99,5 @@ const RadarAnalyse = () => {
         );
     }
 };
-DailyActivity.prototype = {
-    setActivity: func.isRequired
-}
 
 export default RadarAnalyse;

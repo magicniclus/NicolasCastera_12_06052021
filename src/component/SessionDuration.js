@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState, useEffect} from 'react';
 import {
     LineChart,
@@ -8,11 +9,31 @@ import {
   } from "recharts";
 import {userAverageSession} from '../service/datamanager';
 
+/**
+ * [SessionDuration component]
+ *
+ */
 const SessionDuration = () => {
+    /**
+     * [loading state]
+     *
+     * @param   {boolean}  false 
+     *
+     */
     const [loading, setLoading] = useState(false)
+
+    /**
+     * [averageSession state]
+     *
+     * @return  {Array}      [return description]
+     */
     const [averageSession, setAverageSession] = useState([])
 
-
+    /**
+     * [valid function]
+     *  
+     * [retrieval of userAverageSession data via the datamanager]
+     */
     const valid = async () => {
         const dataAverageSession = await userAverageSession()
         setAverageSession(dataAverageSession)
@@ -23,6 +44,15 @@ const SessionDuration = () => {
         valid()
     }, [])
 
+    /**
+     * [customTooltip description]
+     *
+     * @param   {Boolean}  active 
+     * @param   {Array}  payload 
+     * @param   {number}  label 
+     *
+     * @return  {null}           [return description]
+     */
     function customTooltip ({active, payload, label}) {
         if(active){
             const min = payload[0].value;

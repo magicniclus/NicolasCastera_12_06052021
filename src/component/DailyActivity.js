@@ -8,6 +8,7 @@ import { userActivity } from '../service/datamanager';
  *
  */
 const DailyActivity = () => {
+    
     /**
      * [Loader call managment ]
      *
